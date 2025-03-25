@@ -65,3 +65,4 @@
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/obj/Debug/net8.0/Bookstore.API.pdb
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/obj/Debug/net8.0/Bookstore.API.genruntimeconfig.cache
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/obj/Debug/net8.0/ref/Bookstore.API.dll
+/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/obj/Debug/net8.0/Bookstore.API.sourcelink.json

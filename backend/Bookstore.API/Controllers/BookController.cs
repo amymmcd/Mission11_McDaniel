@@ -16,9 +16,22 @@ public class BookController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Book> GetBooks()
+    public IActionResult GetBooks(int pageSize = 5, int pageNum = 1) //because you are returning an object instead of a list of projects, use IActionResult instead of IEnumerable
     {
-        var books = _context.Books.ToList();
-        return books;
+        
+        var bookList = _context.Books
+            .Skip(pageSize * (pageNum - 1))
+            .Take(pageSize)
+            .ToList();
+        
+        var bookCount = _context.Books.Count();
+
+        var resultObject = new
+        {
+            Books = bookList,
+            BookCount = bookCount
+        };
+        
+        return Ok(resultObject);
     }
 }

@@ -26,7 +26,7 @@ function BookList() {
       <h1>Bookstore</h1>
       <br />
       <label>
-        Results per page:
+        Sort by:
         <select value={sortBy} onChange={(s) => {
             setSortBy(s.target.value)
             setPageNum(1);

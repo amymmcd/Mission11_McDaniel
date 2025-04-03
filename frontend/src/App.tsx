@@ -4,6 +4,7 @@ import BooksPage from './pages/BooksPage';
 import BuyPage from './pages/BuyPage';
 import CartPage from './pages/CartPage';
 import { CartProvider } from './context/CartContext';
+import AdminBooksPage from './pages/AdminBooksPage';
 
 function App() {
   return (
@@ -11,12 +12,10 @@ function App() {
       <CartProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<BooksPage />}></Route>
-            <Route
-              path="/buy/:bookID/:title/:price"
-              element={<BuyPage />}
-            ></Route>
-            <Route path="/cart" element={<CartPage />}></Route>
+            <Route path="/" element={<BooksPage />} />
+            <Route path="/buy/:bookID/:title/:price" element={<BuyPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/adminbooks" element={<AdminBooksPage />} />
           </Routes>
         </Router>
       </CartProvider>

@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
-import { Book } from './types/book';
+import { Book } from '../types/Book';
 
-function BookList() {
+function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
   const [pageSize, setPageSize] = useState<number>(5);
   const [pageNum, setPageNum] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
-  const [sortBy, setSortBy] = useState<string>("")
+  const [sortBy, setSortBy] = useState<string>('');
 
   useEffect(() => {
     const fetchBooks = async () => {
+      const categoryParams = selectedCategories
+        .map((cat) => `bookCategories=${encodeURIComponent(cat)}`)
+        .join('&');
       const response = await fetch(
-        `http://localhost:4000/api/Book?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}`
+        `http://localhost:4000/api/Book?pageSize=${pageSize}&pageNum=${pageNum}&sortBy=${sortBy}${selectedCategories.length ? `&${categoryParams}` : ''}`
       );
       const data = await response.json();
       setBooks(data.books);
@@ -19,18 +22,19 @@ function BookList() {
     };
 
     fetchBooks();
-  }, [pageSize, pageNum, sortBy]);
+  }, [pageSize, pageNum, sortBy, selectedCategories]);
 
   return (
     <>
-      <h1>Bookstore</h1>
-      <br />
       <label>
         Sort by:
-        <select value={sortBy} onChange={(s) => {
-            setSortBy(s.target.value)
+        <select
+          value={sortBy}
+          onChange={(s) => {
+            setSortBy(s.target.value);
             setPageNum(1);
-        }}>
+          }}
+        >
           <option value="">No Sort</option>
           <option value="title">Title</option>
           <option value="author">Author</option>
@@ -39,7 +43,12 @@ function BookList() {
       <br />
       <br />
       {books.map((b) => (
-        <div id="bookCard" className="card" style={{ width: "700px" }} key={b.bookID}>
+        <div
+          id="bookCard"
+          className="card"
+          style={{ width: '700px' }}
+          key={b.bookID}
+        >
           <h3 className="card-title">{b.title}</h3>
           <div className="card-body">
             <ul className="list-unstyled">
@@ -97,10 +106,13 @@ function BookList() {
       <br /> <br />
       <label>
         Results per page:
-        <select value={pageSize} onChange={(p) => {
+        <select
+          value={pageSize}
+          onChange={(p) => {
             setPageSize(Number(p.target.value));
             setPageNum(1);
-        }}>
+          }}
+        >
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="20">20</option>

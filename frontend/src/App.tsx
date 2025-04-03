@@ -1,13 +1,12 @@
-import './App.css'
-import BookList from './BookList'
+import './App.css';
+import BooksPage from './pages/BooksPage';
 
 function App() {
-
   return (
     <>
-      <BookList />
+      <BooksPage />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

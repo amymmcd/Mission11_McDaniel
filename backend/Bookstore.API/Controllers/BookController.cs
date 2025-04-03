@@ -16,11 +16,18 @@ public class BookController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string? sortBy = null) //because you are returning an object instead of a list of projects, use IActionResult instead of IEnumerable
+    public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string? sortBy = null, [FromQuery] List<string>? bookCategories = null) //because you are returning an object instead of a list of projects, use IActionResult instead of IEnumerable
     {
         
-        IQueryable<Book> query = _context.Books;
-
+        var query = _context.Books.AsQueryable();
+        
+        // apply filtering based on selected book categories
+        if (bookCategories != null && bookCategories.Any())
+        {
+            query=query.Where(b => bookCategories.Contains(b.Category));
+        }
+        
+        
         // Apply sorting only if sortBy is provided
         if (!string.IsNullOrEmpty(sortBy))
         {
@@ -53,4 +60,16 @@ public class BookController : ControllerBase
         
         return Ok(resultObject);
     }
+
+    [HttpGet("GetBookCategories")]
+    public IActionResult GetBookCategories()
+    {
+        var bookCategories = _context.Books
+            .Select(b => b.Category)
+            .Distinct()
+            .ToList();
+        
+        return Ok(bookCategories);
+    }
+        
 }

@@ -50,7 +50,7 @@ public class BookController : ControllerBase
             .Take(pageSize)
             .ToList();
         
-        var bookCount = _context.Books.Count();
+        var bookCount = query.Count();
 
         var resultObject = new
         {

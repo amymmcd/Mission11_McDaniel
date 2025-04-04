@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/30cdc90f-e383-406c-80ab-928f83d3623a/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/Bookstore-McDaniel-Backend",
+  "appService.deploySubpath": "backend/Bookstore.API/publish"
+}

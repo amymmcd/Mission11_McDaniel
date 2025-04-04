@@ -16,7 +16,7 @@ builder.Services.AddDbContext<BookstoreDbContext>(options =>
 builder.Services.AddCors(options =>
     options.AddPolicy("CorsPolicy",
         policy => {
-            policy.AllowAnyOrigin()
+            policy.WithOrigins("http://localhost:3000", "https://bookstore-mcdaniel-backend-fqe0fag6h2fzc5au.eastus-01.azurewebsites.net") 
                 .AllowAnyMethod()
                 .AllowAnyHeader();
         }));

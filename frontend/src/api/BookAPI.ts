@@ -6,7 +6,8 @@ interface FetchBooksResponse {
   totalNumBooks: number;
 }
 
-const API_URL = 'https://bookstore-mcdaniel-backend-fqe0fag6h2fzc5au.eastus-01.azurewebsites.net/api/Book';
+const API_URL =
+  'https://bookstore-mcdaniel-backend-fqe0fag6h2fzc5au.eastus-01.azurewebsites.net/api/Book';
 
 export const fetchBooks = async (
   pageSize: number,

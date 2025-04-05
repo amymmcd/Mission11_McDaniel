@@ -1,6 +1,11 @@
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/Bookstore.API
+/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/publish/web.config
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/appsettings.Development.json
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/appsettings.json
+/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/publish/appsettings.Development.json
+/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/publish/appsettings.json
+/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/publish/Bookstore.API.deps.json
+/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/publish/Bookstore.API.runtimeconfig.json
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/Bookstore.sqlite
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/Bookstore.API.dll
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/publish/Bookstore.API.deps.json

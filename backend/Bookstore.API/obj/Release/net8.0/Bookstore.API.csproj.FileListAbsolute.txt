@@ -67,8 +67,3 @@
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/obj/Release/net8.0/Bookstore.API.pdb
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/obj/Release/net8.0/Bookstore.API.genruntimeconfig.cache
 /Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/obj/Release/net8.0/ref/Bookstore.API.dll
-/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/bin/Release/net8.0/publish/web.config
-/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/bin/Release/net8.0/publish/appsettings.Development.json
-/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/bin/Release/net8.0/publish/appsettings.json
-/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/bin/Release/net8.0/publish/Bookstore.API.deps.json
-/Users/amy/Desktop/413/Bookstore/backend/Bookstore.API/bin/Release/net8.0/publish/Bookstore.API.runtimeconfig.json

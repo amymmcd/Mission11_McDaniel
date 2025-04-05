@@ -16,7 +16,7 @@ builder.Services.AddDbContext<BookstoreDbContext>(options =>
 builder.Services.AddCors(options =>
     options.AddPolicy("CorsPolicy",
         policy => {
-            policy.WithOrigins("http://localhost:3000", "https://polite-stone-00999641e.6.azurestaticapps.net") 
+            policy.WithOrigins("http://localhost:3000", "https://agreeable-mushroom-06f1b8b1e.6.azurestaticapps.net") 
                 .AllowAnyMethod()
                 .AllowAnyHeader();
         }));
